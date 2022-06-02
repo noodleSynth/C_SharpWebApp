@@ -1,11 +1,8 @@
-import Vue from 'vue';
-import Router from 'vue-router';
+import {createRouter, createWebHistory} from 'vue-router';
 import PageNotFound from '@/components/page-not-found.vue';
 
-Vue.use(Router);
-
-export default new Router({
-  mode: 'history',
+export default new createRouter({
+  history: createWebHistory(),
   base: process.env.BASE_URL,
   routes: [
     {
@@ -30,7 +27,7 @@ export default new Router({
         import(/* webpackChunkName: "about" */ './views/about.vue'),
     },
     {
-      path: '*',
+      path: '/*',
       component: PageNotFound,
     },
   ],

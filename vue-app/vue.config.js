@@ -1,14 +1,4 @@
-module.exports = {
-  configureWebpack: {
-    devtool: 'source-map',
-  },
-  devServer: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:7071',
-        ws: true,
-        changeOrigin: true,
-      },
-    },
-  },
-};
+const { defineConfig } = require('@vue/cli-service')
+module.exports = defineConfig({
+  transpileDependencies: true
+})
